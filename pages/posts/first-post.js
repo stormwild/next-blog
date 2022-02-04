@@ -17,7 +17,10 @@ function FirstPost({ post: { title, body } }) {
         <title>{title}</title>
       </Head>
 
-      <main>{body}</main>
+      <main>
+        <h1>{title}</h1>
+        <article dangerouslySetInnerHTML={{ __html: body }} />
+      </main>
     </>
   );
 }
