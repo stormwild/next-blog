@@ -2,20 +2,51 @@ import Link from "next/link";
 
 function NavBar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <style jsx>{`
+        nav {
+          background-color: cadetblue;
+        }
+        a:link {
+          text-decoration: none;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        li {
+          display: inline-block;
+        }
+
+        li:not(:first-child) {
+          border-left: 1px solid transparent;
+        }
+        li > a {
+          display: block;
+          background-color: chartreuse;
+          padding: 0.5rem 1rem;
+        }
+
+        li > a:focus,
+        li > a:hover {
+          background-color: darkgrey;
+        }
+      `}</style>
+    </>
   );
 }
 
